@@ -5,14 +5,19 @@ import sys
 def main():
     x, y, z = map(int, input().split())
     result = -1
-
+    resultOpt = []
+    flag=False
     # your code
-    if z == 0:
+    if (z-y)%(x-y)==0:
+        resultOpt.append(2*(z-y)//(x-y) - 1)
+        flag=True
+    if z%(x-y)==0:
+        resultOpt.append(2*z//(x-y)+1)
+        flag=True
+    if flag:
+        result = min(resultOpt)
+    if z==0:
         result = 0
-    elif (z-y)%(x-y)==0:
-        result = 2*(z-y)//(x-y) - 1
-    elif z%(x-y)==0:
-        result = 2*z/(x-y)+1
     print(result)
 
 
