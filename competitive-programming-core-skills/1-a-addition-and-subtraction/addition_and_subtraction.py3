@@ -8,16 +8,28 @@ def main():
     resultOpt = []
     flag=False
     # your code
-    if (z-y)%(x-y)==0:
-        resultOpt.append(2*(z-y)//(x-y) - 1)
-        flag=True
-    if z%(x-y)==0:
-        resultOpt.append(2*z//(x-y)+1)
-        flag=True
-    if flag:
-        result = min(resultOpt)
     if z==0:
-        result = 0
+        result=0
+    elif x==y:
+        if z==y:
+            result=1
+    else:
+        try:
+            if (z-y)%(x-y)==0:
+                resultOpt.append(2*(z-y)//(x-y) - 1)
+                flag=True
+        except:
+            pass
+        try:
+            if z%(x-y)==0:
+                resultOpt.append(2*z//(x-y)+1)
+                flag=True
+        except:
+            pass
+        if flag:
+            result = min(resultOpt)
+        if z==0:
+            result = 0
     print(result)
 
 
