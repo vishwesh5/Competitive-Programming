@@ -16,14 +16,18 @@ def main():
     else:
         try:
             if (z-y)%(x-y)==0:
-                resultOpt.append(2*(z-y)//(x-y) - 1)
-                flag=True
+                tmpResult = 2*(z-y)//(x-y) - 1
+                if tmpResult >= 0:
+                    resultOpt.append(tmpResult)
+                    flag=True
         except:
             pass
         try:
             if z%(x-y)==0:
-                resultOpt.append(2*z//(x-y)+1)
-                flag=True
+                tmpResult = 2*z//(x-y)
+                if tmpResult >= 0:
+                    resultOpt.append(tmpResult)
+                    flag=True
         except:
             pass
         if flag:
