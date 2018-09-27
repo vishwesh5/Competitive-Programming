@@ -1,0 +1,7 @@
+n = int(input().strip())
+scores = input().strip().split()
+toRemove = scores.count('-1')
+newScores = (' '.join(scores)).replace('-1','0')
+#print(newScores)
+newScores = list(map(int,newScores.split()))
+print(sum(newScores)/(len(newScores)-toRemove))
